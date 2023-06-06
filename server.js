@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
 const mysql = require('mysql')
+require("dotenv").config()
 
 // Create a connection to the MySQL
 const connection = mysql.createConnection({
@@ -23,7 +24,7 @@ function seedDatabase() {
   const fs = require('fs')
   const path = require('path')
 
-  const seedFilePath = path.join(__dirname, 'seed.sql')
+  const seedFilePath = path.join(__dirname, 'seeds.sql')
   const seedSQL = fs.readFileSync(seedFilePath, 'utf8')
 
   connection.query(seedSQL, (err) => {
