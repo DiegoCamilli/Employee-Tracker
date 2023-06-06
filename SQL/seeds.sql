@@ -1,3 +1,5 @@
+
+-- add fake data to show the app off
 INSERT INTO department (name)
 VALUES ("Accounting"),
        ("Sales"),

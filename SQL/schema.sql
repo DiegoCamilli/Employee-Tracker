@@ -1,7 +1,10 @@
+
+-- set up database
 DROP DATABASE IF EXISTS track_db
 CREATE DATABASE track_db
 USE track_db
 
+-- create tables with relation keys based on the example on bootcampspot
 CREATE TABLE department (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL
