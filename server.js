@@ -1,15 +1,17 @@
 const inquirer = require('inquirer')
-const mysql = require('mysql')
+const mysql = require('mysql2')
 require("dotenv").config()
 
 // Create a connection to the MySQL
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'your_mysql_username',
-  password: 'your_mysql_password',
-  database: 'track_db',
-})
+const connection = mysql.createConnection(
+  {
+    host: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+  },
+  console.log("Connected to the tracker_db database!")
+)
 
 // Connect to the database
 connection.connect((err) => {
